@@ -50,7 +50,7 @@ export function Hero() {
               animate="visible"
             >
               <div className="flex overflow-hidden">
-                {"ADITYA".split("").map((char, index) => (
+                {RESUME_DATA.name.split(" ")[0].split("").map((char, index) => (
                   <motion.span
                     key={index}
                     variants={{
@@ -78,7 +78,7 @@ export function Hero() {
                 ))}
               </div>
               <div className="flex mt-2">
-                {"SADEWALE".split("").map((char, index) => (
+                {RESUME_DATA.name.split(" ").slice(1).join(" ").split("").map((char, index) => (
                   <motion.span
                     key={index}
                     variants={{

@@ -56,7 +56,7 @@ export function Skills() {
               </div>
               
               <div className="flex flex-wrap gap-2">
-                {(RESUME_DATA.skills as Record<string, string[]>)[category.key].map((skill: string) => (
+                {((RESUME_DATA.skills as Record<string, string[]>)[category.key] || []).map((skill: string) => (
                   <span
                     key={skill}
                     className="px-3 py-1.5 rounded-xl bg-white/5 border border-white/5 text-sm text-white/70 hover:border-cyan-400/30 hover:text-cyan-400 transition-colors"

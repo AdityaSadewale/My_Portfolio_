@@ -55,7 +55,7 @@ export function Navbar() {
           </div>
 
           <motion.a
-            href="/ADITYA-SADEWALE-Resume_2026.pdf"
+            href="/ADITYA_SADEWALE_Resume_2026.pdf"
             download
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}
             whileTap={{ scale: 0.95 }}

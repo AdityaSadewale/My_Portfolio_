@@ -16,7 +16,7 @@ const LeetCodeIcon = ({ size = 24 }: { size?: number }) => (
   </svg>
 );
 
-export function TechImpactDashboard() {
+export function EcosystemDashboard() {
   const [githubData, setGithubData] = React.useState({ repos: "0", followers: "0", stars: "0", activity: "A+" });
   const [leetcodeData, setLeetcodeData] = React.useState({ totalSolved: "0", ranking: "0", acceptanceRate: "0%", easy: "0", medium: "0", hard: "0" });
   const [loading, setLoading] = React.useState(true);
@@ -29,32 +29,39 @@ export function TechImpactDashboard() {
 
         // Fetch GitHub User Data
         const ghUserResponse = await fetch("https://api.github.com/users/AdityaSadewale");
+        if (!ghUserResponse.ok) throw new Error("GitHub user API failed");
         const ghUserJson = await ghUserResponse.json();
 
-        // Fetch Repos to sum stars (Github doesn't provide total stars in user API)
+        // Fetch Repos to sum stars
         const ghReposResponse = await fetch("https://api.github.com/users/AdityaSadewale/repos?per_page=100");
-        const ghReposJson = await ghReposResponse.json();
-        const totalStars = ghReposJson.reduce((acc: number, repo: any) => acc + repo.stargazers_count, 0);
+        if (ghReposResponse.ok) {
+          const ghReposJson = await ghReposResponse.json();
+          const totalStars = Array.isArray(ghReposJson) 
+            ? ghReposJson.reduce((acc: number, repo: any) => acc + (repo.stargazers_count || 0), 0)
+            : 0;
 
-        setGithubData({
-          repos: ghUserJson.public_repos?.toString() || "0",
-          followers: ghUserJson.followers?.toString() || "0",
-          stars: totalStars.toString(),
-          activity: totalStars > 50 ? "S+" : totalStars > 10 ? "A+" : "B"
-        });
+          setGithubData({
+            repos: ghUserJson.public_repos?.toString() || "0",
+            followers: ghUserJson.followers?.toString() || "0",
+            stars: totalStars.toString(),
+            activity: totalStars > 50 ? "S+" : totalStars > 10 ? "A+" : "B"
+          });
+        }
 
         // Fetch LeetCode
-        const lcResponse = await fetch(`https://leetcode-stats-api.herokuapp.com/Aditya_Sadewale_`);
-        const lcJson = await lcResponse.json();
-        if (lcJson.status === "success") {
-          setLeetcodeData({
-            totalSolved: lcJson.totalSolved.toString(),
-            ranking: lcJson.ranking.toLocaleString(),
-            acceptanceRate: lcJson.acceptanceRate.toString() + "%",
-            easy: lcJson.easySolved.toString(),
-            medium: lcJson.mediumSolved.toString(),
-            hard: lcJson.hardSolved.toString()
-          });
+        const lcResponse = await fetch("https://leetcode-stats-api.herokuapp.com/Aditya_Sadewale_");
+        if (lcResponse.ok) {
+          const lcJson = await lcResponse.json();
+          if (lcJson.status === "success") {
+            setLeetcodeData({
+              totalSolved: lcJson.totalSolved.toString(),
+              ranking: lcJson.ranking.toLocaleString(),
+              acceptanceRate: lcJson.acceptanceRate.toString() + "%",
+              easy: lcJson.easySolved.toString(),
+              medium: lcJson.mediumSolved.toString(),
+              hard: lcJson.hardSolved.toString()
+            });
+          }
         }
       } catch (error) {
         console.error("Error fetching dashboard data:", error);

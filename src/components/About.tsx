@@ -115,7 +115,7 @@ export function About() {
                 </div>
                 <div>
                   <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">Core Technology</div>
-                  <div className="text-sm font-bold text-white/80">AI / MERN / Python /JavaScripts / React /</div>
+                  <div className="text-sm font-bold text-white/80">AI / MERN / Python / JavaScript / React /</div>
                 </div>
               </div>
               <div className="hidden md:block h-8 w-px bg-white/5" />

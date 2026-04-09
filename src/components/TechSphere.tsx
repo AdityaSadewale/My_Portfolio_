@@ -7,9 +7,11 @@ import * as THREE from "three";
 
 function FiberOptics() {
   const pointsRef = useRef<THREE.Points>(null);
+  const [count, setCount] = React.useState(2000); // Default for SSR
   
-  // Dynamically adjust count based on screen width for performance
-  const count = typeof window !== 'undefined' && window.innerWidth < 768 ? 1500 : 3000;
+  React.useEffect(() => {
+    setCount(window.innerWidth < 768 ? 1500 : 3000);
+  }, []);
   
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
