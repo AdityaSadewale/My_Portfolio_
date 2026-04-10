@@ -49,7 +49,7 @@ export function EcosystemDashboard() {
         }
 
         // Fetch LeetCode
-        const lcResponse = await fetch("https://leetcode-stats-api.herokuapp.com/Aditya_Sadewale_");
+        const lcResponse = await fetch("/api/leetcode");
         if (lcResponse.ok) {
           const lcJson = await lcResponse.json();
           if (lcJson.status === "success") {
