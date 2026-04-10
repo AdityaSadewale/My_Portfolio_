@@ -38,11 +38,6 @@ As a **10m Competitive Shooter** and **Certified Mountaineer**, I apply a unique
 ├── public/            # Static assets
 └── package.json       # Dependencies & Scripts
 
-
-Advanced Mountaineering Certificate - Krida Vishaykam Girishikharan
-
-10m Air Pistol/Rifle Specialist - Competitive Marksman
-
 🤝 Connect with Me
 
 LinkedIn: Aditya Sadewale
