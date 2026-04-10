@@ -44,8 +44,7 @@ Advanced Mountaineering Certificate - Krida Vishaykam Girishikharan
 10m Air Pistol/Rifle Specialist - Competitive Marksman
 
 🤝 Connect with Me
+
 LinkedIn: Aditya Sadewale
-
 GitHub: @AdityaSadewale
-
 Location: Maharashtra, India
