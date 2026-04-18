@@ -30,16 +30,46 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "Online Face Recognition System",
-      tech: ["Python", "Flask", "HTML", "CSS", "JavaScript"],
-      description: "Automated attendance using real-time face recognition. Integrated Excel updates for efficient data management.",
-      link: "https://github.com/AdityaSadewale"
+      title: "Personal Brand Portfolio",
+      tech: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
+      description: "A premium, responsive portfolio designed to showcase a dual career in development and design. Features advanced CSS animations, a modern UI/UX aesthetic, and seamless cross-device compatibility.",
+      link: "https://github.com/AdityaSadewale/My_Portfolio_"
+    },
+    {
+      title: "Shooting Performance & Focus Trainer",
+      tech: ["React", "Vite", "Tailwind CSS", "Vercel"],
+      description: "My flagship application designed for competitive marksmen. It combines real-time daily task tracking with specialized focus exercises and performance analytics to improve competitive shooting consistency.",
+      link: "https://github.com/AdityaSadewale/shooting-practice-azure"
     },
     {
       title: "Shanti Portal Mental Wellness Platform",
       tech: ["MERN Stack"],
       description: "Developed therapy-based platform with audio sessions, yoga, and spiritual content. Implemented authentication and responsive UI.",
       link: "https://github.com/AdityaSadewale"
+    },
+    {
+      title: "Global News Aggregator",
+      tech: ["React", "Bootstrap", "NewsAPI", "JavaScript"],
+      description: "A real-time news platform that fetches and categorizes global headlines using NewsAPI. Features an infinite scroll UI and category-based filtering for a seamless user experience.",
+      link: "https://github.com/AdityaSadewale/News-Website-React"
+    },
+    {
+      title: "AI Language Translator",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Google Gemini API"],
+      description: "A cutting-edge translation platform powered by the Gemini API. Features real-time text-to-speech, voice input, and clipboard integration for seamless multilingual communication.",
+      link: "https://github.com/AdityaSadewale/AI-Language-Translator"
+    },
+    {
+      title: "Dynamic CRUD Blog Platform",
+      tech: ["Node.js", "Express", "MongoDB", "EJS", "Bootstrap"],
+      description: "A full-stack blogging application featuring complete CRUD operations. Includes a robust backend for creating, reading, updating, and deleting posts with a focus on clean database management.",
+      link: "https://github.com/AdityaSadewale/Blog-Website-using-CRUD-"
+    },
+    {
+      title: "Gemini 2.0 AI Clone",
+      tech: ["React", "Google Gemini API", "Context API", "Tailwind CSS"],
+      description: "A high-fidelity clone of the Gemini AI interface. Integrates real-time conversational capabilities using the Gemini API, featuring a sleek, responsive UI and persistent chat state management.",
+      link: "https://github.com/AdityaSadewale/Gemini_Clone_Website"
     },
     {
       title: "AI Career Coach",
@@ -64,6 +94,12 @@ export const RESUME_DATA = {
       tech: ["Python"],
       description: "Practical automation project showing real-world application of Python scripting and API handling.",
       link: "https://github.com/AdityaSadewale"
+    },
+    {
+      title: "30-Day Goal & Roadmap Tracker",
+      tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+      description: "An interactive roadmap application designed to track 30-day challenges and learning paths. Features progress persistence, milestone marking, and an intuitive UI to keep users focused on their long-term goals.",
+      link: "https://github.com/AdityaSadewale/30-day-Roadmap-Website"
     }
   ],
   skills: {
