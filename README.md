@@ -40,6 +40,7 @@ As a **10m Competitive Shooter** and **Certified Mountaineer**, I apply a unique
 
 🤝 Connect with Me
 
+
 LinkedIn: Aditya Sadewale
 GitHub: @AdityaSadewale
 Location: Maharashtra, India
