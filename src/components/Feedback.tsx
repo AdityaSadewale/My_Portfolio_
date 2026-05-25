@@ -17,6 +17,7 @@ export function Feedback() {
     // In a real app, you'd send this to an API
   };
 
+  
   return (
     <section id="feedback" className="py-24 relative z-10 bg-[#050505] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 to-transparent pointer-events-none" />
