@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RESUME_DATA } from "@/lib/data";
 import { GraduationCap, Calendar } from "lucide-react";
 
+
 export function Education() {
   return (
     <section id="education" className="py-24 relative z-10 bg-[#050505]">
