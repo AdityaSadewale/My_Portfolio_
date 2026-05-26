@@ -7,7 +7,6 @@ import { Trophy, Medal, Target, Users } from "lucide-react";
 
 const achievementIcons = [Trophy, Target, Users, Medal];
 
-
 export function Achievements() {
   return (
     <section id="achievements" className="py-24 relative z-10 bg-[#050505]">
