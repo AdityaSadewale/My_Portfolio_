@@ -8,7 +8,7 @@ export const RESUME_DATA = {
     github: "https://github.com/AdityaSadewale",
     leetcode: "https://leetcode.com/u/Aditya_Sadewale_/"
   },
-  education: [j
+  education: [
     {
       degree: "Bachelor of Technology in CSE",
       institution: "Karmayogi Institute of Technology, Pandharpur",

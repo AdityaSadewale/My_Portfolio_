@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, GitPullRequest, Star, Zap, Trophy, Target, ChartBar, Award } from "lucide-react";
+import { Code2, GitPullRequest, Star, Zap, Trophy, Target, BarChart3, Award } from "lucide-react";
 import { RESUME_DATA } from "@/lib/data";
 
 const GithubIcon = ({ size = 20 }: { size?: number }) => (
@@ -151,7 +151,7 @@ export function EcosystemDashboard() {
                 {[
                   { label: "Total Solved", value: leetcodeData.totalSolved, icon: Trophy, color: "text-[#FFA116]" },
                   { label: "Ranking", value: leetcodeData.ranking, icon: Target, color: "text-cyan-400" },
-                  { label: "Acceptance", value: leetcodeData.acceptanceRate, icon: ChartBar, color: "text-purple-400" },
+                  { label: "Acceptance", value: leetcodeData.acceptanceRate, icon: BarChart3, color: "text-purple-400" },
                   { label: "Hard Solved", value: leetcodeData.hard, icon: Award, color: "text-red-400" },
                 ].map((stat, i) => (
                   <motion.div

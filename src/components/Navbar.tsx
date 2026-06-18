@@ -41,8 +41,8 @@ export function Navbar() {
               <motion.a
                 key={link.name}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="text-white/70 hover:text-cyan-400 transition-colors"

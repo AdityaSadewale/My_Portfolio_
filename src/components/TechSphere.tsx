@@ -2,7 +2,7 @@
 
 import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, AdaptiveDpr } from "@react-three/drei";
+import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 function FiberOptics() {
@@ -21,7 +21,7 @@ function FiberOptics() {
         pos[i * 3 + 2] = (Math.random() - 0.5) * 10; // Z
     }
     return pos;
-  }, []);
+  }, [count]);
 
   const velocities = useMemo(() => {
     const v = new Float32Array(count);
@@ -29,7 +29,7 @@ function FiberOptics() {
         v[i] = 0.02 + Math.random() * 0.05;
     }
     return v;
-  }, []);
+  }, [count]);
 
   useFrame(() => {
     if (pointsRef.current) {

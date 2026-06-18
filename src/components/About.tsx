@@ -95,7 +95,7 @@ export function About() {
                     <item.icon size={28} />
                   </div>
                   <div>
-                    <h4 className="text- white font-bold mb-2 uppercase tracking-widest text-sm">{item.title}</h4>
+                    <h4 className="text-white font-bold mb-2 uppercase tracking-widest text-sm">{item.title}</h4>
                     <p className="text-white/40 text-sm leading-relaxed">{item.content}</p>
                   </div>
                 </motion.div>
