@@ -2,10 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { useForm, ValidationError } from '@formspree/react';
 import { RESUME_DATA } from "@/lib/data";
 
 export function Contact() {
+  const [state, handleSubmit] = useForm("mzdqlppz");
+
   return (
     <section id="contact" className="py-24 relative z-10 bg-[#050505]">
       <div className="container mx-auto px-6">
@@ -69,7 +72,23 @@ export function Contact() {
           </motion.div>
 
           {/* Contact Form */}
+          {state.succeeded ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="glass-card p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden flex flex-col items-center justify-center text-center h-full min-h-[400px]"
+            >
+              <div className="w-20 h-20 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(16,185,129,0.2)]">
+                  <CheckCircle size={40} />
+              </div>
+              <h3 className="text-3xl font-black mb-4">MESSAGE SENT</h3>
+              <p className="text-white/50 max-w-sm">
+                  Thanks for reaching out! I'll get back to you as soon as possible.
+              </p>
+            </motion.div>
+          ) : (
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -80,49 +99,67 @@ export function Contact() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                    <label className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Name</label>
+                    <label htmlFor="name" className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Name</label>
                     <input 
+                        id="name"
+                        name="name"
                         type="text" 
                         placeholder="Aditya Sadewale"
+                        required
                         className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-cyan-400/50 transition-colors"
                     />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
                 <div>
-                    <label className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Email</label>
+                    <label htmlFor="email" className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Email</label>
                     <input 
+                        id="email"
+                        name="email"
                         type="email" 
                         placeholder="aditya@example.com"
+                        required
                         className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-cyan-400/50 transition-colors"
                     />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
             </div>
 
             <div className="mb-6">
-                <label className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Subject</label>
+                <label htmlFor="subject" className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Subject</label>
                 <input 
+                    id="subject"
+                    name="subject"
                     type="text" 
                     placeholder="Project Inquiry"
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-cyan-400/50 transition-colors"
                 />
+                <ValidationError prefix="Subject" field="subject" errors={state.errors} />
             </div>
 
             <div className="mb-8">
-                <label className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Message</label>
+                <label htmlFor="message" className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Message</label>
                 <textarea 
+                    id="message"
+                    name="message"
                     rows={4}
                     placeholder="Tell me about your vision..."
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-cyan-400/50 transition-colors resize-none"
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
 
             <button
-                type="button"
-                className="w-full py-5 bg-white text-black font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-cyan-400 transition-all shadow-xl group"
+                type="submit"
+                disabled={state.submitting}
+                className="w-full py-5 bg-white text-black font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-cyan-400 transition-all shadow-xl group disabled:opacity-50 disabled:cursor-not-allowed"
             >
-                TRANSMIT MESSAGE
+                {state.submitting ? "TRANSMITTING..." : "TRANSMIT MESSAGE"}
                 <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </motion.form>
+          )}
         </div>
       </div>
     </section>
