@@ -16,11 +16,11 @@ export async function GET() {
 
     const rawData = await response.json();
     
-    // Normalize the data to match what the frontend expects
     // The previous API had a 'status' field and different field names for solved counts
-    const totalSubmissions = rawData.totalSubmissions?.find((s: any) => s.difficulty === 'All');
+    const totalSubmissions = rawData.totalSubmissions?.find((s: { difficulty: string; submissions: number }) => s.difficulty === 'All');
+    const acSubmission = rawData.matchedUserStats?.acSubmissionNum?.find((s: { difficulty: string; submissions: number }) => s.difficulty === 'All');
     const acceptanceRate = totalSubmissions && totalSubmissions.submissions > 0 
-      ? ((rawData.matchedUserStats?.acSubmissionNum?.find((s: any) => s.difficulty === 'All')?.submissions || 0) / totalSubmissions.submissions * 100).toFixed(1)
+      ? ((acSubmission?.submissions || 0) / totalSubmissions.submissions * 100).toFixed(1)
       : "0";
 
     const normalizedData = {

@@ -60,7 +60,7 @@ export function Certifications() {
                     <Award size={40} />
                 </div>
                 <div>
-                   <h3 className="text-2xl font-bold italic">"Excellence is not an act, but a habit."</h3>
+                   <h3 className="text-2xl font-bold italic">&ldquo;Excellence is not an act, but a habit.&rdquo;</h3>
                    <p className="text-white/40">Continuously expanding my horizons through learning.</p>
                 </div>
             </div>

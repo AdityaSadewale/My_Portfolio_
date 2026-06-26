@@ -5,6 +5,12 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
+// A simple deterministic pseudo-random generator to keep rendering pure
+function seededRandom(seed: number) {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 function FiberOptics() {
   const pointsRef = useRef<THREE.Points>(null);
   const [count, setCount] = React.useState(2000); // Default for SSR
@@ -16,9 +22,9 @@ function FiberOptics() {
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-        pos[i * 3] = (Math.random() - 0.5) * 20; // X
-        pos[i * 3 + 1] = (Math.random() - 0.5) * 20; // Y
-        pos[i * 3 + 2] = (Math.random() - 0.5) * 10; // Z
+        pos[i * 3] = (seededRandom(i * 3 + 1) - 0.5) * 20; // X
+        pos[i * 3 + 1] = (seededRandom(i * 3 + 2) - 0.5) * 20; // Y
+        pos[i * 3 + 2] = (seededRandom(i * 3 + 3) - 0.5) * 10; // Z
     }
     return pos;
   }, [count]);
@@ -26,7 +32,7 @@ function FiberOptics() {
   const velocities = useMemo(() => {
     const v = new Float32Array(count);
     for (let i = 0; i < count; i++) {
-        v[i] = 0.02 + Math.random() * 0.05;
+        v[i] = 0.02 + seededRandom(i + 4) * 0.05;
     }
     return v;
   }, [count]);

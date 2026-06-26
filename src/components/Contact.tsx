@@ -28,7 +28,7 @@ export function Contact() {
             transition={{ delay: 0.1 }}
             className="text-white/50 max-w-xl"
           >
-            Ready to collaborate on high-precision AI and Full-Stack projects. Let's build the future together.
+            Ready to collaborate on high-precision AI and Full-Stack projects. Let&apos;s build the future together.
           </motion.p>
         </div>
 
@@ -83,7 +83,7 @@ export function Contact() {
               </div>
               <h3 className="text-3xl font-black mb-4">MESSAGE SENT</h3>
               <p className="text-white/50 max-w-sm">
-                  Thanks for reaching out! I'll get back to you as soon as possible.
+                  Thanks for reaching out! I&apos;ll get back to you as soon as possible.
               </p>
             </motion.div>
           ) : (

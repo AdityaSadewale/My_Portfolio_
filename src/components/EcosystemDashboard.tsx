@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code2, GitPullRequest, Star, Zap, Trophy, Target, BarChart3, Award } from "lucide-react";
-import { RESUME_DATA } from "@/lib/data";
 
 const GithubIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
@@ -19,7 +18,6 @@ const LeetCodeIcon = ({ size = 24 }: { size?: number }) => (
 export function EcosystemDashboard() {
   const [githubData, setGithubData] = React.useState({ repos: "0", followers: "0", stars: "0", activity: "A+" });
   const [leetcodeData, setLeetcodeData] = React.useState({ totalSolved: "0", ranking: "0", acceptanceRate: "0%", easy: "0", medium: "0", hard: "0" });
-  const [loading, setLoading] = React.useState(true);
   const [lastUpdated, setLastUpdated] = React.useState("");
 
   React.useEffect(() => {
@@ -37,7 +35,7 @@ export function EcosystemDashboard() {
         if (ghReposResponse.ok) {
           const ghReposJson = await ghReposResponse.json();
           const totalStars = Array.isArray(ghReposJson) 
-            ? ghReposJson.reduce((acc: number, repo: any) => acc + (repo.stargazers_count || 0), 0)
+            ? ghReposJson.reduce((acc: number, repo: { stargazers_count: number }) => acc + (repo.stargazers_count || 0), 0)
             : 0;
 
           setGithubData({
@@ -65,8 +63,6 @@ export function EcosystemDashboard() {
         }
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
-      } finally {
-        setLoading(false);
       }
     }
     fetchData();
