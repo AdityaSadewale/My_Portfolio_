@@ -1,9 +1,9 @@
 # 🌐 Aditya Sadewale | Full-Stack Portfolio
 
+
 This is the official repository for my professional portfolio. It showcases my technical skills in the **MERN Stack**, my journey as a **competitive athlete**, and my work on high-precision web applications.
 
 **Live Demo:** [https://my-portfolio-ten-vert-77.vercel.app/](https://my-portfolio-ten-vert-77.vercel.app/)
-
 ---
 
 ## 🎯 The Philosophy
