@@ -1,3 +1,46 @@
+export const FEATURED_PROJECTS = [
+  {
+    title: "Creative Agency Portfolio",
+    description: "A stunning, modern creative agency website with sleek animations, responsive layouts, and professional service showcases. Features smooth transitions, hover effects, and a fully optimized performance on Vercel's edge network.",
+    tech: ["React", "TypeScript", "Vite", "CSS3"],
+    github: "https://github.com/AdityaSadewale/creative-agency-portfolio-website",
+    demo: "https://creative-agency-portfolio-website.vercel.app",
+    featured: true,
+  },
+  {
+    title: "Aqua Flow App",
+    description: "A clean, responsive React application with an intuitive UI and component-based architecture. Demonstrates modern frontend engineering with smooth performance, mobile-first design, and scalable code structure.",
+    tech: ["React.js", "TypeScript", "CSS3", "Vite"],
+    github: "https://github.com/AdityaSadewale/Aqua-flow-app-React-",
+    demo: "https://aqua-flow-app-react.vercel.app",
+    featured: true,
+  },
+  {
+    title: "Shooting Practice Trainer",
+    description: "My flagship app for competitive marksmen — combines real-time daily task tracking with specialized focus exercises and performance analytics. Target-based shooting system with score tracking to improve accuracy and reaction time.",
+    tech: ["JavaScript", "React", "Vite", "CSS3"],
+    github: "https://github.com/AdityaSadewale/Shooting_Practice_",
+    demo: "https://shooting-practice-azure.vercel.app",
+    featured: true,
+  },
+  {
+    title: "Internship Project — Full-Stack Platform",
+    description: "A professional full-stack web application developed during internship, featuring secure authentication, RESTful API integration, database CRUD operations, and a scalable architecture. Demonstrates real-world engineering practices.",
+    tech: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    github: "https://github.com/AdityaSadewale/-Internship-Project-1",
+    demo: "https://internship-project-1-swart.vercel.app",
+    featured: true,
+  },
+  {
+    title: "My Portfolio Website",
+    description: "This very portfolio — a premium Next.js portfolio with glassmorphism design, Framer Motion animations, real-time LeetCode stats, AI ecosystem dashboard, and smooth multi-section layout. Built to make a powerful first impression.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/AdityaSadewale/My_Portfolio_",
+    demo: null,
+    featured: true,
+  },
+];
+
 export const RESUME_DATA = {
   name: "ADITYA SADEWALE",
   title: "Full-Stack & AI Developer | Python, MERN, Web & Automation",
