@@ -56,7 +56,7 @@ export const RESUME_DATA = {
       degree: "Bachelor of Technology in CSE",
       institution: "Karmayogi Institute of Technology, Pandharpur",
       year: "2026",
-      score: "(7.6/10)"
+      score: "(7.2/10)"
     },
     {
       degree: "HSC (12th)",
