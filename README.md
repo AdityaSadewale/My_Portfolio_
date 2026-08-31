@@ -23,7 +23,6 @@ As a **10m Competitive Shooter** and **Certified Mountaineer**, I apply a unique
 - **Dynamic Skillset:** Interactive sections for Frontend, Backend, and Algorithmic problem-solving (Python/SQL).
 - **Responsive Architecture:** Fully optimized for all screen sizes, from mobile to desktop.
 - **Certification Vault:** Verified links to my MERN Stack and Mountaineering credentials.
-
 ---
 
 ## 🏗️ Project Structure
