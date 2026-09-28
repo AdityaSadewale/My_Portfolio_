@@ -30,6 +30,7 @@ export function Certifications() {
           </motion.p>
         </div>
 
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {RESUME_DATA.certifications.map((cert, idx) => (
             <motion.div
