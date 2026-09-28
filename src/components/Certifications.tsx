@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RESUME_DATA } from "@/lib/data";
 import { Award, CheckCircle2 } from "lucide-react";
 
+
 export function Certifications() {
   return (
     <section id="certifications" className="py-24 relative z-10 bg-[#050505]">
