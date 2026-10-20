@@ -26,6 +26,8 @@ As a **10m Competitive Shooter** and **Certified Mountaineer**, I apply a unique
 - **Certification Vault:** Verified links to my MERN Stack and Mountaineering credentials.
 ---
 
+
+
 ## 🏗️ Project Structure
 
 ```text
