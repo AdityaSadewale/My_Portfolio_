@@ -112,6 +112,7 @@ export function Hero() {
               transition={{ duration: 1.5, delay: 1.2, ease: "easeInOut" }}
               className="h-[2px] w-48 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto blur-[1px]"
             />
+
             
             {/* Ambient Glow behind name */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-500/10 blur-[120px] rounded-full -z-10 animate-pulse" />
