@@ -10,6 +10,7 @@ This is the official repository for my professional portfolio. It showcases my t
 
 As a **10m Competitive Shooter** and **Certified Mountaineer**, I apply a unique level of discipline to software engineering. This portfolio is built to demonstrate my ability to bridge the gap between complex backend logic and sleek, intuitive UI.
 
+
 ## 💻 Tech Stack
 
 - **Frontend:** React.js, Bootstrap 5, CSS3, Vite
