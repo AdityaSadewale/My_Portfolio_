@@ -5,7 +5,6 @@ This is the official repository for my professional portfolio. It showcases my t
 **Live Demo:** [https://my-portfolio-ten-vert-77.vercel.app/](https://my-portfolio-ten-vert-77.vercel.app/)
 ---
 
-
 ## 🎯 The Philosophy
 "Precision in Code. Focus in Life." 
 
